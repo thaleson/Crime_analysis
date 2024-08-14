@@ -24,6 +24,13 @@ with st.sidebar:
 
      #exibir animação
     st_lottie(animacao_1, height=200, width=290)
+
+    # marcador azul
+    colored_header(
+        label="",
+        description="",
+        color_name="light-blue-70"
+        )
     selected = option_menu(
         menu_title=None,
         options=["Home", "Sobre", "Previsão do Modelo", "Análise de Dados"],
