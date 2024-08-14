@@ -7,6 +7,15 @@ from folium.plugins import HeatMap
 from streamlit_folium import st_folium
 
 def gerar_coordenadas(num_locais):
+    """
+    Gera uma lista de coordenadas geográficas.
+
+    Args:
+        num_locais (int): Número de coordenadas a serem geradas.
+
+    Returns:
+        list: Lista de tuplas contendo latitude e longitude.
+    """
     latitude_min, latitude_max = -23.0, -22.0
     longitude_min, longitude_max = -43.5, -43.0
     
@@ -19,6 +28,17 @@ def gerar_coordenadas(num_locais):
     return coordenadas
 
 def gerar_mapa(dados_mapeamento):
+    """
+    Gera um mapa interativo com marcadores baseados nos dados de mapeamento fornecidos.
+
+    Args:
+        dados_mapeamento (pd.DataFrame): DataFrame contendo as colunas 'latitude', 'longitude',
+                                         'nome_local', 'prob_latrocinio', 'prob_roubo_veiculo',
+                                         'prob_furto_veiculos', 'prob_trafico_drogas'.
+
+    Returns:
+        folium.Map: Mapa gerado com marcadores coloridos de acordo com as probabilidades.
+    """
     mapa = folium.Map(location=[-22.5, -43.25], zoom_start=10)
     
     for i, row in dados_mapeamento.iterrows():
@@ -46,6 +66,15 @@ def gerar_mapa(dados_mapeamento):
     return mapa
 
 def sugerir_acao(probabilidade):
+    """
+    Sugere uma ação baseada na probabilidade de ocorrência de um crime.
+
+    Args:
+        probabilidade (float): Probabilidade de ocorrência de um crime em determinado local.
+
+    Returns:
+        str: Sugestão de ação a ser tomada com base na probabilidade.
+    """
     if probabilidade > 75:
         return "Urgente: Reforçar presença policial e aumentar patrulhamento."
     elif probabilidade > 50:
@@ -56,29 +85,39 @@ def sugerir_acao(probabilidade):
         return "Muito Baixo: Continuar com o padrão atual de policiamento."
 
 def show_predict():
+    """
+    Exibe a interface de previsão de crimes utilizando um modelo treinado.
+
+    A função carrega um modelo preditivo, aceita inputs do usuário para
+    diferentes tipos de crimes, gera previsões, exibe um mapa interativo com
+    a probabilidade de ocorrência em diferentes locais e sugere ações a serem
+    tomadas com base nas probabilidades.
+    """
     st.title("Previsão do Modelo")
     
+    # Carrega o modelo pretreinado
     best_model = joblib.load('models/best_model.pkl')
 
-    
     st.write("Digite os valores para previsão:")
 
+    # Inputs do usuário
     latrocinio = st.number_input("Latrocínio", min_value=0, key="latrocinio_input")
     roubo_veiculo = st.number_input("Roubo de Veículo", min_value=0, key="roubo_veiculo_input")
     furto_veiculos = st.number_input("Furto de Veículos", min_value=0, key="furto_veiculos_input")
     trafico_drogas = st.number_input("Tráfico de Drogas", min_value=0, key="trafico_drogas_input")
     
+    # Gera a previsão quando o botão é clicado
     if st.button('Prever'):
         if latrocinio == 0 and roubo_veiculo == 0 and furto_veiculos == 0 and trafico_drogas == 0:
             st.warning("⚠️ Por favor, insira valores diferentes de zero para a previsão.")
         else:
-            # Cria um DataFrame para cada tipo de crime com o respectivo valor inserido
+            # DataFrames para previsão de cada crime
             df_latrocinio = pd.DataFrame({'latrocinio': [latrocinio], 'roubo_veiculo': [0], 'furto_veiculos': [0], 'trafico_drogas': [0]})
             df_roubo_veiculo = pd.DataFrame({'latrocinio': [0], 'roubo_veiculo': [roubo_veiculo], 'furto_veiculos': [0], 'trafico_drogas': [0]})
             df_furto_veiculos = pd.DataFrame({'latrocinio': [0], 'roubo_veiculo': [0], 'furto_veiculos': [furto_veiculos], 'trafico_drogas': [0]})
             df_trafico_drogas = pd.DataFrame({'latrocinio': [0], 'roubo_veiculo': [0], 'furto_veiculos': [0], 'trafico_drogas': [trafico_drogas]})
 
-            # Previsões individuais para cada crime
+            # Previsões para cada crime
             previsao_latrocinio = best_model.predict(df_latrocinio)
             previsao_roubo_veiculo = best_model.predict(df_roubo_veiculo)
             previsao_furto_veiculos = best_model.predict(df_furto_veiculos)
@@ -92,6 +131,7 @@ def show_predict():
 
             st.write("**Mapeamento de Probabilidade de Ocorrências:**")
             
+            # Geração de coordenadas aleatórias para mapeamento
             num_locais = 4
             coordenadas_locais = gerar_coordenadas(num_locais)
             
@@ -104,6 +144,7 @@ def show_predict():
             
             nomes_locais = list(locais.keys())
             
+            # Dados de mapeamento
             dados_mapeamento = pd.DataFrame({
                 'nome_local': nomes_locais,
                 'latitude': [coord[0] for coord in coordenadas_locais],
@@ -114,8 +155,8 @@ def show_predict():
                 'prob_trafico_drogas': np.random.uniform(low=0, high=400, size=num_locais),
             })
             
+            # Geração do mapa e exibição na interface
             mapa = gerar_mapa(dados_mapeamento)
-            
             st.components.v1.html(mapa._repr_html_(), height=500)
 
             st.warning("⚠️ Nota: O modelo de previsão é para fins de estudo e análise.")
