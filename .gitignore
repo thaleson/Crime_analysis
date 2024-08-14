@@ -26,7 +26,7 @@ __pycache__/
 
 # Diretórios e arquivos de build
 build/
-dist/
+
 *.egg-info/
 
 # Arquivos e diretórios do IDE
@@ -56,10 +56,9 @@ Thumbs.db
 *.swo
 
 # Outros arquivos e diretórios não relevantes para o repositório
-*.csv
+
 *.xlsx
 *.h5
-*.pkl
 *.zip
 
 # Arquivos e diretórios específicos de data science
