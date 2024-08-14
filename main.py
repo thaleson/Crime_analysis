@@ -2,6 +2,7 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 from streamlit_lottie import st_lottie
 import json
+from streamlit_extras.colored_header import colored_header
 
 # Configuração da página
 st.set_page_config(page_title="Análise de Crimes", page_icon=":guardsman:", layout="wide")
@@ -25,12 +26,13 @@ with st.sidebar:
      #exibir animação
     st_lottie(animacao_1, height=200, width=290)
 
-    # marcador azul
+        # marcador azul
     colored_header(
-        label="",
-        description="",
-        color_name="light-blue-70"
-        )
+            label="",
+            description="",
+            color_name="light-blue-70"
+            )
+    
     selected = option_menu(
         menu_title=None,
         options=["Home", "Sobre", "Previsão do Modelo", "Análise de Dados"],
