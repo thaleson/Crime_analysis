@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_4dd7320ca68e81bb026bef866d530bd9 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_4dd7320ca68e81bb026bef866d530bd9" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_4dd7320ca68e81bb026bef866d530bd9 = L.map(
+                "map_4dd7320ca68e81bb026bef866d530bd9",
+                {
+                    center: [-22.5, -43.25],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_73062092fc136fba98acf20ae6c2c47a = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_73062092fc136fba98acf20ae6c2c47a.addTo(map_4dd7320ca68e81bb026bef866d530bd9);
+        
+    
+            var circle_marker_4a95111db62c23f225eecf892d3a1dde = L.circleMarker(
+                [-22.557435438690185, -43.03665099116529],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_4dd7320ca68e81bb026bef866d530bd9);
+        
+    
+        var popup_80e3c88d028e669ab686faec2a725858 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f11a93b740b878528fcab077701e87b2 = $(`<div id="html_f11a93b740b878528fcab077701e87b2" style="width: 100.0%; height: 100.0%;">Baixada Fluminense<br>Latrocínio: 164.2%<br>Roubo de Veículo: 235.4%<br>Furto de Veículos: 65.6%<br>Tráfico de Drogas: 46.8%</div>`)[0];
+                popup_80e3c88d028e669ab686faec2a725858.setContent(html_f11a93b740b878528fcab077701e87b2);
+            
+        
+
+        circle_marker_4a95111db62c23f225eecf892d3a1dde.bindPopup(popup_80e3c88d028e669ab686faec2a725858)
+        ;
+
+        
+    
+    
+            var circle_marker_bcad9e69d7c45b8dd2d086545cc28d8d = L.circleMarker(
+                [-22.870569216817017, -43.072876309466594],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_4dd7320ca68e81bb026bef866d530bd9);
+        
+    
+        var popup_b4f6e7cfec09bbce63b7301d04599974 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c654b33f7f15d6fa059ae24a8d4a006b = $(`<div id="html_c654b33f7f15d6fa059ae24a8d4a006b" style="width: 100.0%; height: 100.0%;">Capital<br>Latrocínio: 153.4%<br>Roubo de Veículo: 209.1%<br>Furto de Veículos: 49.2%<br>Tráfico de Drogas: 274.5%</div>`)[0];
+                popup_b4f6e7cfec09bbce63b7301d04599974.setContent(html_c654b33f7f15d6fa059ae24a8d4a006b);
+            
+        
+
+        circle_marker_bcad9e69d7c45b8dd2d086545cc28d8d.bindPopup(popup_b4f6e7cfec09bbce63b7301d04599974)
+        ;
+
+        
+    
+    
+            var circle_marker_e241bc26a571351be4d2ec4c8b5e8d8e = L.circleMarker(
+                [-22.004544671140568, -43.46363665185426],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_4dd7320ca68e81bb026bef866d530bd9);
+        
+    
+        var popup_473de6544e7a6fb8e6e645cb34f0d529 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6b119cd3ed5d7704dc9119d2db4b1e44 = $(`<div id="html_6b119cd3ed5d7704dc9119d2db4b1e44" style="width: 100.0%; height: 100.0%;">Grande Niterói<br>Latrocínio: 5.7%<br>Roubo de Veículo: 196.6%<br>Furto de Veículos: 98.4%<br>Tráfico de Drogas: 201.6%</div>`)[0];
+                popup_473de6544e7a6fb8e6e645cb34f0d529.setContent(html_6b119cd3ed5d7704dc9119d2db4b1e44);
+            
+        
+
+        circle_marker_e241bc26a571351be4d2ec4c8b5e8d8e.bindPopup(popup_473de6544e7a6fb8e6e645cb34f0d529)
+        ;
+
+        
+    
+    
+            var circle_marker_760d5e83b64a10b20e883afa2ce071e9 = L.circleMarker(
+                [-22.376480821174628, -43.060835835853965],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_4dd7320ca68e81bb026bef866d530bd9);
+        
+    
+        var popup_a6cc31d437d1502fc502fe4eb35f2014 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_730af8ed029780a1dc79c5dd9e3e36de = $(`<div id="html_730af8ed029780a1dc79c5dd9e3e36de" style="width: 100.0%; height: 100.0%;">Interior<br>Latrocínio: 64.5%<br>Roubo de Veículo: 183.5%<br>Furto de Veículos: 2.3%<br>Tráfico de Drogas: 169.6%</div>`)[0];
+                popup_a6cc31d437d1502fc502fe4eb35f2014.setContent(html_730af8ed029780a1dc79c5dd9e3e36de);
+            
+        
+
+        circle_marker_760d5e83b64a10b20e883afa2ce071e9.bindPopup(popup_a6cc31d437d1502fc502fe4eb35f2014)
+        ;
+
+        
+    
+</script>
+</html>

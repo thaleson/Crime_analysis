@@ -1,0 +1,72 @@
+# Diretórios e arquivos específicos do Conda
+.conda/
+env/
+*.condarc
+
+# Diretórios e arquivos de ambiente virtual
+venv/
+ENV/
+env.bak/
+venv.bak/
+*.pyc
+__pycache__/
+
+
+
+# Arquivos de log e cache
+*.log
+*.sqlite3
+*.db
+*.pid
+*.pkl
+*.pickle
+*.tmp
+*.swp
+*.swo
+
+# Diretórios e arquivos de build
+build/
+dist/
+*.egg-info/
+
+# Arquivos e diretórios do IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Arquivos gerados por IDEs e editores
+*.iml
+
+# Arquivos de configuração do sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos de configuração do sistema do Conda
+*.condarc
+*.conda-env
+
+# Arquivos de configuração do PyCharm
+.idea/
+
+# Arquivos e pastas temporárias
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Outros arquivos e diretórios não relevantes para o repositório
+*.csv
+*.xlsx
+*.h5
+*.pkl
+*.zip
+
+# Arquivos e diretórios específicos de data science
+results/
+outputs/
+
+# Ignorar arquivos criados por serviços de nuvem
+*.s3
+*.gcs
+*.gs
