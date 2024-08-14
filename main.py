@@ -1,8 +1,16 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
+from streamlit_lottie import st_lottie
+import json
 
 # Configuração da página
 st.set_page_config(page_title="Análise de Crimes", page_icon=":guardsman:", layout="wide")
+
+
+
+# animações
+with open("anims/animacao_lottie.json") as source:
+    animacao_1 = json.load(source)
 
 
  # Aplicar estilos de CSS à página
@@ -11,6 +19,11 @@ with open("static/styles.css") as f:
 
 # Menu de navegação
 with st.sidebar:
+
+
+
+     #exibir animação
+    st_lottie(animacao_1, height=200, width=290)
     selected = option_menu(
         menu_title=None,
         options=["Home", "Sobre", "Previsão do Modelo", "Análise de Dados"],
