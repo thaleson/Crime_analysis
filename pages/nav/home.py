@@ -4,7 +4,7 @@ from streamlit_lottie import st_lottie
 
 def show_home():
     # Título principal
-    st.title("Análise de Crimes 🚨🔍")
+    st.title("Análise de Crimes Rio de janeiro 🚨🔍")
 
     # Subtítulo
     st.subheader("Olá! Eu sou Thaleson Silva 👋")
