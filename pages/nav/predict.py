@@ -58,7 +58,7 @@ def sugerir_acao(probabilidade):
 def show_predict():
     st.title("Previsão do Modelo")
     
-    best_model = joblib.load('modelo/best_model.pkl')
+    best_model = joblib.load('models/best_model.pkl')
 
     
     st.write("Digite os valores para previsão:")
