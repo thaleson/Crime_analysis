@@ -18,8 +18,6 @@ __pycache__/
 *.sqlite3
 *.db
 *.pid
-*.pkl
-*.pickle
 *.tmp
 *.swp
 *.swo
@@ -42,7 +40,7 @@ build/
 .DS_Store
 Thumbs.db
 
-# Arquivos de configuração do sistema do Conda
+# Arquivos e diretórios do Conda
 *.condarc
 *.conda-env
 
@@ -56,9 +54,9 @@ Thumbs.db
 *.swo
 
 # Outros arquivos e diretórios não relevantes para o repositório
-
 *.xlsx
 *.h5
+
 *.zip
 
 # Arquivos e diretórios específicos de data science
@@ -69,3 +67,7 @@ outputs/
 *.s3
 *.gcs
 *.gs
+
+# Exceções para arquivos e diretórios a serem incluídos
+!models/
+!*.pkl
